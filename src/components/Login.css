@@ -1,0 +1,21 @@
+.img{
+    margin-left:45%
+    
+    }
+    
+    .card{
+        height:300px;
+        width:500px;
+        background-color: #dedbd5;
+        
+    }
+    .footer{
+     display: flex;
+     flex-direction: column;
+     margin-left: 2rem;
+    }
+    
+    form{
+        margin-top: 10px;
+        
+    }

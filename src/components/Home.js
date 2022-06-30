@@ -1,8 +1,11 @@
 import React from 'react'
+import Slidebar from './Slidebar'
 
 function Home() {
   return (
-    <div>Home</div>
+    <div>
+      <Slidebar/>
+    </div>
   )
 }
 
