@@ -1,0 +1,13 @@
+.popup-div{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    width: 50%;
+    border-radius: 15px;
+}
+.popup-header{
+    display: flex;
+    border-radius: 5px;
+    justify-content: space-between;
+    background-color: rgb(54, 54, 54);
+}

@@ -1,0 +1,14 @@
+.items-div{
+    display: flex;
+    justify-content: space-between;
+}
+.item-first{
+    display: flex;
+}
+.ico-star{
+    /* padding-left: 6%; */
+}
+.name{
+    /* padding-left: 12%; */
+    /* flex: 1; */
+}

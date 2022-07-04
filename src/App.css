@@ -19,12 +19,12 @@
   flex: 0.6;
   padding: 5px;
   border-radius: 5px;
-  /* background-color:gainsboro; */
   justify-content: space-between;
 }
 .header-last{
   display: flex;
   flex:0.2;
+  align-items: center;
   justify-content: space-around;
 }
 .compose-btn{
@@ -34,20 +34,77 @@
 }
 .slidebar>button{
   border-radius: 25px;
-  padding: 20px;
-  width: 13%;
+  padding: 19px;
+  width: 120px;
   background-color:white;
   border: none ;
   box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%);
   font-size:medium;
+}
+.item{
+  padding-top: 10px;
+  padding-left: 10px;
+  display: flex;
+}
+.stage{
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgb(231, 225, 225);
+}
+.second-last{
+  margin-top: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2%;
+}
+.last{
+  padding: 2% 0%;
+  display: flex;
+  justify-content: center;
+}
+.text{
+  margin-left: 10px;
+}
+.message{
+  margin-left: 2%;
+}
+.ico{
+  padding-right: 4px;
 }
 .sliders-main-div{
   margin-top: 15px;
 }
 .sliders-div{
   display: flex;
-  max-width: 15%;
   justify-content: space-between;
   padding: 0px 10px;
-  /* margin-top: 10px; */
 }
+.home{
+  display: flex;
+}
+.homeheader{
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(236, 231, 231);
+}
+.homeheader-left{
+  display: flex;
+  flex: 0.2;
+  justify-content: space-evenly;
+}
+.homeheader-right{
+  display: flex;
+  flex:0.2;
+  justify-content: space-evenly;
+}
+.slidebar-main{
+  display: flex;
+  flex: 0.2;
+}
+.main{
+  display: flex;
+  flex:0.8;
+  flex-direction: column;
+ }

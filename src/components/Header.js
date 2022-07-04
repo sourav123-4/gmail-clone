@@ -23,7 +23,7 @@ function Header() {
       <div className='header-last'>
         <Icon name='question circle outline' size="large" color='grey' />
         <Icon name='setting' size='large' color='grey' />
-        <Icon name='th' color='grey' />
+        <IconButton><Icon name='th' color='grey' /></IconButton>
         <Avatar sx={{ width: 24, height: 24 }}></Avatar>
       </div>
     </div>
