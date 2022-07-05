@@ -1,11 +1,20 @@
-import React from 'react'
-import { Checkbox, Dropdown, Icon } from 'semantic-ui-react'
+import React, { useState } from 'react';
+import { Checkbox, Dropdown, Icon } from 'semantic-ui-react';
+import { useDispatch } from 'react-redux';
+import { deleteAllEmail } from '../components/redux/Action';
 function Homeheader() {
+    const [checked, setChecked] = useState(false);
+    const dispatch = useDispatch();
+    const handleDelete = () => {
+        dispatch(deleteAllEmail())
+        setChecked(false)
+    }
     return (
         <div className='homeheader'>
             <div className='homeheader-left'>
                 <div className='checkbox-main'>
-                    <Checkbox label='' />
+                    <Checkbox label='' checked={checked}
+                        onClick={() => setChecked((c) => !c)} />
                     <Dropdown text=''>
                         <Dropdown.Menu>
                             <Dropdown.Item text='ALL' />
@@ -17,8 +26,18 @@ function Homeheader() {
                         </Dropdown.Menu>
                     </Dropdown>
                 </div>
-                <Icon name="redo" />
-                <Icon name='ellipsis vertical' />
+                {
+                    checked ?
+                        <div>
+                            <Icon name='archive' />
+                            <Icon name='exclamation circle' />
+                            <Icon name='trash' onClick={handleDelete} />
+                            <Icon name='mail' />
+                            <Icon name='wait' />
+                            <Icon name='ellipsis vertical' />
+                        </div> : <div><Icon name="redo" />
+                            <Icon name='ellipsis vertical' /></div>
+                }
             </div>
             <div className="homeheader-right">
                 <span>1 - 50 of 90</span>

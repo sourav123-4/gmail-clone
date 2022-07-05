@@ -1,8 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Input, Icon, Image } from 'semantic-ui-react';
 import { Avatar, IconButton } from '@mui/material';
+import { useDispatch } from 'react-redux';
+import {searchval} from './redux/Action'
 function Header() {
   const [search, setSearch] = useState("");
+  const dispatch = useDispatch();
+  useEffect(()=>{
+    dispatch(searchval(search))
+  },[search,dispatch])
   return (
     <div className='header'>
       <div className='header-first'>
