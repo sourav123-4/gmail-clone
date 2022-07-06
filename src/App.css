@@ -45,6 +45,8 @@
   padding-top: 10px;
   padding-left: 10px;
   display: flex;
+  background-color: rgb(179, 185, 183);
+  margin:3px;
 }
 .stage{
   padding-bottom: 5px;

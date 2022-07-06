@@ -1,20 +1,25 @@
 import React, { useState } from 'react';
 import { Checkbox, Dropdown, Icon } from 'semantic-ui-react';
 import { useDispatch } from 'react-redux';
-import { deleteAllEmail } from '../components/redux/Action';
+import { deleteAllEmail, checkboxCheck } from '../components/redux/Action';
 function Homeheader() {
     const [checked, setChecked] = useState(false);
     const dispatch = useDispatch();
     const handleDelete = () => {
         dispatch(deleteAllEmail())
         setChecked(false)
+        
+    }
+    const changeBool = ()=>{
+        setChecked((c) => !c)
+        dispatch(checkboxCheck(!checked))
     }
     return (
         <div className='homeheader'>
             <div className='homeheader-left'>
                 <div className='checkbox-main'>
                     <Checkbox label='' checked={checked}
-                        onClick={() => setChecked((c) => !c)} />
+                        onClick={changeBool} />
                     <Dropdown text=''>
                         <Dropdown.Menu>
                             <Dropdown.Item text='ALL' />

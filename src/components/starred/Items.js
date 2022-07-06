@@ -1,19 +1,15 @@
 import React, { useState } from 'react';
 import { Checkbox, Icon } from 'semantic-ui-react';
-import './items.css';
-import { useDispatch } from 'react-redux';
-import { deleteEmail, starredEmail,starredEmailRemove } from './components/redux/Action';
+import './Items.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { deleteEmail, starredEmailRemove, reversestarboolval } from '../redux/Action';
 function Items({ item, index }) {
   const [show, setShow] = useState(false);
   const [activeIndex, setActiveIndex] = useState(-1);
   const dispatch = useDispatch();
-  const [changeBoolval,setChangeBoolval] = useState(false)
-  const handleStar = ()=>{
-    setChangeBoolval(true)
-    dispatch(starredEmail(item))
-  }
+  const checkval = useSelector(state => state.rootReducer.emailReducer.checkBool);
   const handlereverseStar = ()=>{
-    setChangeBoolval(false)
+    dispatch(reversestarboolval())
     dispatch(starredEmailRemove(item))
   }
   return (
@@ -25,9 +21,8 @@ function Items({ item, index }) {
       setShow(false);
     }}>
       <div className='item-first'>
-        <Checkbox />
-        {!changeBoolval? <Icon name="star outline" className='ico-star' onClick={handleStar} />:
-        <Icon name='star' onClick={handlereverseStar}/>}
+        <Checkbox checked={checkval} />
+        <Icon name='star' onClick={handlereverseStar}/>
         <p className='name'>{item.email}</p>
       </div>
       <p>{item.subject}</p>

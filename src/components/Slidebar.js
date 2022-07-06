@@ -1,9 +1,11 @@
 import { Avatar } from '@mui/material'
 import React from 'react'
 import { Icon, Dropdown } from 'semantic-ui-react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { setBoolval } from './redux/Action'
+import {Link} from 'react-router-dom'
 function Slidebar() {
+  const state = useSelector((state) => state.rootReducer.emailReducer.email);
   const dispatch = useDispatch();
   return (
     <div className='slidebar'>
@@ -17,12 +19,12 @@ function Slidebar() {
         <div className="item">
           <Icon name="inbox" color="grey" size="large" className='ico' />
           <span className="text">Inbox</span>
-          <span className="message">10</span>
+          <span className="message">{state.length}</span>
         </div>
-        <div className="item">
+        <Link to="/starred"><div className="item" >
           <Icon name="star" color="grey" size="large" className='ico' />
           <span className="text">Starred</span>
-        </div>
+        </div></Link>
         <div className="item">
           <Icon name="send" color="grey" size="large" className='ico' />
           <span className="text">Sent</span>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Tab, Input, Button, Icon } from 'semantic-ui-react'
 import Items from './Items'
-import { Addemail, CloseDiv, filteredEmail } from './components/redux/Action'
+import { Addemail, CloseDiv, filteredEmail } from '../redux/Action'
 import { useDispatch, useSelector } from 'react-redux'
 import './Main.css'
 function Main() {
@@ -10,6 +10,7 @@ function Main() {
   const data = useSelector(state => state.rootReducer.emailReducer.email);
   const searchval = useSelector(state => state.rootReducer.emailReducer.searchval);
   const filteredData = useSelector(state => state.rootReducer.emailReducer.filteredEmail)
+  const starredData = useSelector(state => state.rootReducer.emailReducer.starredEmail)
   const length = data.length;
   const [input1, setInput1] = useState({
     email: "",
@@ -28,7 +29,7 @@ function Main() {
               length={length}
               index={index}
               item={item} />
-          }) : data?.map((item, index) => {
+          }) : starredData?.map((item, index) => {
             return <Items key={index}
               length={length}
               index={index}

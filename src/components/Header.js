@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { Input, Icon, Image } from 'semantic-ui-react';
 import { Avatar, IconButton } from '@mui/material';
 import { useDispatch } from 'react-redux';
-import {searchval} from './redux/Action'
+import { searchval } from './redux/Action'
 function Header() {
   const [search, setSearch] = useState("");
   const dispatch = useDispatch();
@@ -13,7 +14,7 @@ function Header() {
     <div className='header'>
       <div className='header-first'>
         <IconButton><Icon name='bars' /></IconButton>
-        <Image src='https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_1x_r2.png' />
+        <Link to="/"><Image src='https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_1x_r2.png' /></Link>
       </div>
       <div className='header-middle'>
       <Icon name='search' color='grey'/>

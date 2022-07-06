@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Input, Button } from "semantic-ui-react";
 import "./Login.css";
 function Login() {
@@ -18,7 +18,6 @@ function Login() {
 
     function handleSubmit(event) {
         event.preventDefault();
-        console.log("handleSubmit button clicked", loginDetails);
         setIsAllowed(true);
         localStorage.setItem("token", isAllowed);
         let token = localStorage.getItem("token");
